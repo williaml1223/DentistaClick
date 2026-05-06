@@ -24,284 +24,93 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
         }
         .logo { font-size: 1.5em; font-weight: 700; color: var(--azul); }
         .logo span { color: var(--bandera-co); }
-        .btn-header {
-            background: var(--whatsapp);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-        }
+        .btn-header { background: var(--whatsapp); color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: 700; }
         
         .hero {
             background: linear-gradient(135deg, var(--bandera-co) 0%, #002060 100%);
-            color: white;
-            padding: 80px 5%;
-            text-align: center;
+            color: white; padding: 80px 5%; text-align: center;
         }
         .hero h1 { font-size: 2.5em; margin-bottom: 20px; line-height: 1.3; }
         .hero h1 span { color: var(--amarillo-co); }
         .hero p { font-size: 1.2em; opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
         .btn-hero {
-            background: var(--whatsapp);
-            color: white;
-            padding: 16px 35px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1em;
-            display: inline-block;
-            transition: transform 0.3s;
-            box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+            background: var(--whatsapp); color: white; padding: 16px 35px; border-radius: 40px;
+            text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block;
+            transition: transform 0.3s; box-shadow: 0 6px 25px rgba(37,211,102,0.4);
         }
         .btn-hero:hover { transform: scale(1.05); }
         
-        .precios {
-            padding: 80px 5%;
-            background: var(--gris);
-            text-align: center;
-        }
+        .precios { padding: 80px 5%; background: var(--gris); text-align: center; }
         .precios h2 { font-size: 2em; color: var(--azul); margin-bottom: 50px; }
         .planes { display: flex; gap: 30px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        
+        /* ESTILOS PREMIUM COLOMBIA */
         .plan {
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            flex: 1;
-            min-width: 280px;
-            max-width: 350px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--bandera-co);
-            transition: transform 0.3s;
-            position: relative;
+            background: white; border-radius: 20px; padding: 0; overflow: hidden;
+            flex: 1; min-width: 280px; max-width: 350px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: all 0.3s ease;
+            position: relative; border: 1px solid #eef2f6; display: flex; flex-direction: column;
         }
-        <style>
-    .plan {
-        background: white;
-        border-radius: 20px;
-        padding: 0;
-        overflow: hidden;
-        flex: 1;
-        min-width: 280px;
-        max-width: 350px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        position: relative;
-        border: 1px solid #eef2f6;
-        display: flex;
-        flex-direction: column;
-    }
-    .plan-header {
-        padding: 30px 25px;
-        text-align: center;
-        border-bottom: 1px solid #f0f4f8;
-    }
-    .plan-body {
-        padding: 25px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .plan-body ul {
-        list-style: none;
-        text-align: left;
-        margin: 10px 0 20px 0;
-        flex-grow: 1;
-    }
-    .plan-body ul li {
-        padding: 10px 0;
-        border-bottom: 1px solid #f5f7fa;
-        font-size: 0.95em;
-        color: #4a5568;
-    }
-    .plan-body ul li::before { 
-        content: "✓"; 
-        color: #48bb78; 
-        font-weight: bold; 
-        margin-right: 10px; 
-    }
-    .precio {
-        font-size: 2.8em;
-        font-weight: 800;
-        color: #75AADB;
-        margin: 15px 0 5px;
-        line-height: 1;
-    }
-    .precio small {
-        font-size: 0.35em;
-        color: #a0aec0;
-        font-weight: 400;
-    }
-    .btn-plan {
-        display: block;
-        background: #75AADB;
-        color: white;
-        padding: 14px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 700;
-        text-align: center;
-        margin-top: auto;
-        transition: all 0.2s;
-        border: 2px solid #75AADB;
-    }
-    .btn-plan:hover {
-        background: #4A90D9;
-        border-color: #4A90D9;
-        transform: translateY(-2px);
-    }
-    .plan.popular {
-        border-color: #FFD700;
-        box-shadow: 0 25px 50px -12px rgba(255, 215, 0, 0.25);
-        transform: scale(1.02);
-        z-index: 2;
-    }
-    .plan.popular .plan-header {
-        background: linear-gradient(135deg, #75AADB 0%, #4A90D9 100%);
-        color: white;
-        border-bottom: none;
-    }
-    .plan.popular .precio {
-        color: #FFD700;
-    }
-    .plan.popular .btn-plan {
-        background: #FFD700;
-        border-color: #FFD700;
-        color: #1a3c5e;
-    }
-    .ribbon {
-        position: absolute;
-        top: 20px;
-        right: -35px;
-        background: #FFD700;
-        color: #1a3c5e;
-        padding: 8px 40px;
-        transform: rotate(45deg);
-        font-weight: 700;
-        font-size: 0.8em;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .plan.vip {
-        border-color: #1a3c5e;
-        background: #f8fafd;
-    }
-    .plan.vip .plan-header {
-        background: #1a3c5e;
-        color: white;
-    }
-    .plan.vip .btn-plan {
-        background: #C60B1E;
-        border-color: #C60B1E;
-    }
-    .garantia-badge {
-        background: #f0fff4;
-        color: #006847;
-        padding: 8px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 0.8em;
-        font-weight: 700;
-        margin-top: 15px;
-        border: 1px solid #75AADB;
-    }
-
-        .plan:hover { transform: translateY(-10px); }
-        .plan.destacado { border-top: 4px solid var(--amarillo-co); }
-        .plan h3 { color: var(--azul); margin-bottom: 10px; }
-        .plan .precio { font-size: 2.5em; color: var(--bandera-co); font-weight: 700; margin: 15px 0; }
-        .plan .precio small { font-size: 0.4em; color: #888; }
-        .plan ul { list-style: none; text-align: left; margin: 20px 0; }
-        .plan ul li { padding: 8px 0; border-bottom: 1px solid #eee; }
-        .plan ul li::before { content: "✅ "; }
+        .plan-header { padding: 30px 25px; text-align: center; border-bottom: 1px solid #f0f4f8; }
+        .plan-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .plan-body ul { list-style: none; text-align: left; margin: 10px 0 20px 0; flex-grow: 1; }
+        .plan-body ul li { padding: 10px 0; border-bottom: 1px solid #f5f7fa; font-size: 0.95em; color: #4a5568; }
+        .plan-body ul li::before { content: "✓"; color: #48bb78; font-weight: bold; margin-right: 10px; }
+        .precio { font-size: 2.8em; font-weight: 800; color: #003893; margin: 15px 0 5px; line-height: 1; }
+        .precio small { font-size: 0.35em; color: #a0aec0; font-weight: 400; }
         .btn-plan {
-            display: block;
-            background: var(--whatsapp);
-            color: white;
-            padding: 14px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin-top: 20px;
-            transition: background 0.3s;
+            display: block; background: #003893; color: white; padding: 14px; border-radius: 12px;
+            text-decoration: none; font-weight: 700; text-align: center; margin-top: auto;
+            transition: all 0.2s; border: 2px solid #003893;
+        }
+        .btn-plan:hover { background: #002060; border-color: #002060; transform: translateY(-2px); }
+        .plan.popular {
+            border-color: #FFD100; box-shadow: 0 25px 50px -12px rgba(255, 209, 0, 0.25);
+            transform: scale(1.02); z-index: 2;
+        }
+        .plan.popular .plan-header { background: linear-gradient(135deg, #003893 0%, #001a40 100%); color: white; border-bottom: none; }
+        .plan.popular .precio { color: #FFD100; }
+        .plan.popular .btn-plan { background: #FFD100; border-color: #FFD100; color: #003893; }
+        .ribbon {
+            position: absolute; top: 20px; right: -35px; background: #FFD100; color: #003893;
+            padding: 8px 40px; transform: rotate(45deg); font-weight: 700; font-size: 0.8em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .plan.vip { border-color: #003893; background: #f8fafd; }
+        .plan.vip .plan-header { background: #003893; color: white; }
+        .plan.vip .btn-plan { background: #C60B1E; border-color: #C60B1E; }
+        .garantia-badge {
+            background: #fff8e1; color: #003893; padding: 8px; border-radius: 8px;
+            text-align: center; font-size: 0.8em; font-weight: 700; margin-top: 15px;
+            border: 1px solid #FFD100;
         }
         
-        .demo {
-            padding: 80px 5%;
-            text-align: center;
-            background: white;
-        }
-        .demo h2 { font-size: 2em; color: var(--azul); margin-bottom: 30px; }
-        .demo img {
-            max-width: 800px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        .btn-demo {
-            display: inline-block;
-            margin-top: 30px;
-            background: var(--bandera-co);
-            color: white;
-            padding: 16px 35px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-        }
-        
-        .testimonial {
-            padding: 80px 5%;
-            background: var(--gris);
-            text-align: center;
-        }
+        .testimonial { padding: 80px 5%; background: var(--gris); text-align: center; }
         .testimonial h2 { font-size: 2em; color: var(--azul); margin-bottom: 40px; }
         .testimonio-card {
-            background: white;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 15px;
-            border-left: 5px solid var(--bandera-co);
-            text-align: left;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            background: white; max-width: 700px; margin: 0 auto; padding: 40px;
+            border-radius: 15px; border-left: 5px solid var(--bandera-co);
+            text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         }
         .testimonio-card p { font-style: italic; font-size: 1.1em; }
         .testimonio-card .autor { margin-top: 15px; font-weight: 700; color: var(--azul); }
         .estrellas { color: #f4b400; margin-bottom: 10px; }
         
-        .faq {
-            padding: 80px 5%;
-            background: white;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .faq { padding: 80px 5%; background: white; max-width: 800px; margin: 0 auto; }
         .faq h2 { font-size: 2em; color: var(--azul); margin-bottom: 40px; text-align: center; }
         .faq-item { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        .faq-item h3 { color: var(--azul); margin-bottom: 10px; cursor: pointer; }
+        .faq-item h3 { color: var(--azul); margin-bottom: 10px; }
         .faq-item p { color: #666; }
         
-        .cta-final {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, var(--bandera-co), #002060);
-            color: white;
-            text-align: center;
-        }
+        .cta-final { padding: 80px 5%; background: linear-gradient(135deg, var(--bandera-co), #002060); color: white; text-align: center; }
         .cta-final h2 { font-size: 2em; margin-bottom: 20px; }
         .cta-final p { margin-bottom: 30px; font-size: 1.1em; }
         
-        footer {
-            background: #0c1f30;
-            color: white;
-            text-align: center;
-            padding: 30px 5%;
-            opacity: 0.8;
-        }
+        footer { background: #0c1f30; color: white; text-align: center; padding: 30px 5%; opacity: 0.8; }
         
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8em; }
@@ -325,49 +134,67 @@
 <section class="precios" id="precios">
     <h2>Planes para tu consultorio odontológico</h2>
     <div class="planes">
+
         <div class="plan">
-            <h3>🦷 BASIC</h3>
-            <div class="precio">$49 <small>USD</small></div>
-            <p style="color:#888; margin-bottom:15px;">Pago único. Sin mensualidades.</p>
-            <ul>
-                <li>Página web personalizada</li>
-                <li>Dominio .com incluido</li>
-                <li>Hosting 1er mes gratis</li>
-                <li>Botón WhatsApp directo</li>
-                <li>Google Search Console</li>
-                <li>Entrega en 24 horas</li>
-            </ul>
-            <a href="https://wa.me/584248548251?text=Hola%2C%20me%20interesa%20el%20plan%20BASIC%20Colombia%20de%20%2449%20USD" class="btn-plan">Quiero el BASIC →</a>
+            <div class="plan-header">
+                <h3>🦷 BASIC</h3>
+                <div class="precio">$49 <small>USD</small></div>
+                <p style="color:#718096; font-size:0.9em;">Tu web lista en 24h</p>
+            </div>
+            <div class="plan-body">
+                <ul>
+                    <li>Página web personalizada</li>
+                    <li>Dominio .com incluido</li>
+                    <li>Hosting 1er mes gratis</li>
+                    <li>Botón WhatsApp directo</li>
+                    <li>Google Search Console</li>
+                </ul>
+                <a href="https://wa.me/584248548251?text=Hola%2C%20me%20interesa%20el%20plan%20BASIC%20Colombia%20de%20%2449%20USD" class="btn-plan">EMPEZAR →</a>
+            </div>
         </div>
-        <div class="plan destacado">
-            <div style="background:var(--amarillo-co); color:#000; padding:5px 15px; border-radius:20px; display:inline-block; margin-bottom:10px; font-weight:700;">⭐ MÁS POPULAR</div>
-            <h3>🦷 PLUS</h3>
-            <div class="precio">$79 <small>USD</small></div>
-            <p style="color:#888; margin-bottom:15px;">Pago único. Sin mensualidades.</p>
-            <ul>
-                <li>Todo lo del plan BASIC</li>
-                <li>Dominio .com incluido</li>
-                <li>Hosting 1 año GRATIS</li>
-                <li>Soporte por 3 meses</li>
-                <li>Video tutorial</li>
-                <li>Entrega en 48 horas</li>
-            </ul>
-            <a href="https://wa.me/584248548251?text=Hola%2C%20me%20interesa%20el%20plan%20PLUS%20Colombia%20de%20%2479%20USD" class="btn-plan">Quiero el PLUS →</a>
+
+        <div class="plan popular">
+            <div class="ribbon">⭐ MÁS VENDIDO</div>
+            <div class="plan-header">
+                <h3>🦷 PLUS</h3>
+                <div class="precio">$79 <small>USD</small></div>
+                <p style="color:#cbd5e0; font-size:0.9em;">Autonomía total por 1 año</p>
+            </div>
+            <div class="plan-body">
+                <ul>
+                    <li><strong>Todo lo del plan BASIC</strong></li>
+                    <li>Hosting <strong>1 año GRATIS</strong></li>
+                    <li>Soporte personalizado <strong>3 meses</strong></li>
+                    <li>Video tutorial de uso</li>
+                    <li>Optimización de velocidad</li>
+                    <li><strong>Sin preocupaciones técnicas</strong></li>
+                </ul>
+                <a href="https://wa.me/584248548251?text=Hola%2C%20me%20interesa%20el%20plan%20PLUS%20Colombia%20de%20%2479%20USD" class="btn-plan">QUIERO EL PLUS →</a>
+            </div>
         </div>
-        <div class="plan">
-            <h3>🦷 FULL</h3>
-            <div class="precio">$99 <small>USD</small></div>
-            <p style="color:#888; margin-bottom:15px;">Pago único. Sin mensualidades.</p>
-            <ul>
-                <li>Todo lo del plan PLUS</li>
-                <li>Dominio .com incluido</li>
-                <li>Fotos profesionales</li>
-                <li>SEO Local inicial</li>
-                <li>Soporte por 6 meses</li>
-                <li>Entrega en 72 horas</li>
-            </ul>
-            <a href="https://wa.me/584248548251?text=Hola%2C%20me%20interesa%20el%20plan%20FULL%20Colombia%20de%20%2499%20USD" class="btn-plan">Quiero el FULL →</a>
+
+        <div class="plan vip">
+            <div class="plan-header">
+                <h3>🦷 FULL</h3>
+                <div class="precio">$99 <small>USD</small></div>
+                <p style="color:#cbd5e0; font-size:0.9em;">Experiencia premium</p>
+            </div>
+            <div class="plan-body">
+                <ul>
+                    <li><strong>Todo lo del plan PLUS</strong></li>
+                    <li><strong>Fotos profesionales</strong> en consultorio</li>
+                    <li><strong>SEO Local</strong> para Google</li>
+                    <li>Soporte prioritario <strong>6 meses</strong></li>
+                    <li>Diseño de logo básico (opcional)</li>
+                    <li><strong>Para consultorios de alto nivel</strong></li>
+                </ul>
+                <div class="garantia-badge">
+                    🔒 GARANTÍA: 2 pacientes nuevos en 60 días o te devolvemos tu dinero
+                </div>
+                <a href="https://wa.me/584248548251?text=Hola%2C%20me%20interesa%20el%20plan%20FULL%20Colombia%20de%20%2499%20USD" class="btn-plan">QUIERO EL FULL →</a>
+            </div>
         </div>
+
     </div>
 </section>
 
