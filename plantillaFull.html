@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nombre Consultorio] | Odontología Premium en [Ciudad]</title>
+    <meta name="description" content="Clínica dental de alto nivel en [Ciudad]. Especialistas en estética y rehabilitación oral. Tecnología avanzada. Agende su cita.">
+    <style>
+        :root {
+            --color-fondo: #fafafa;
+            --color-texto: #333333;
+            --color-acento: #c8a45c;
+            --color-borde: #e8e8e8;
+            --color-boton: #25d366;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; color: var(--color-texto); line-height: 1.6; background: var(--color-fondo); }
+        
+        header {
+            background: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-borde);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(5px);
+        }
+        .logo img { height: 50px; }
+        .btn-agenda-header {
+            background: var(--color-acento);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero {
+            padding: 100px 5%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .hero-texto { flex: 1; min-width: 300px; }
+        .hero-imagen { flex: 1; min-width: 300px; text-align: center; }
+        .hero h1 { font-size: 3em; font-weight: 300; color: #111; margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 strong { color: var(--color-acento); font-weight: 700; }
+        .hero p { font-size: 1.1em; color: #666; margin-bottom: 30px; }
+        .hero-imagen img { width: 100%; max-width: 450px; }
+        .btn-hero {
+            background: transparent;
+            color: var(--color-acento);
+            padding: 14px 30px;
+            border: 1px solid var(--color-acento);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+        .btn-hero:hover { background: var(--color-acento); color: white; }
+        
+        .casos-clinicos {
+            padding: 80px 5%;
+            background: white;
+            text-align: center;
+        }
+        .casos-clinicos h2 { font-size: 2em; font-weight: 300; margin-bottom: 40px; }
+        .casos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .caso-card {
+            border: 1px solid var(--color-borde);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .caso-card img { width: 100%; height: auto; display: block; }
+        .caso-info { padding: 15px; text-align: left; font-size: 0.9em; color: #666; }
+        .caso-info strong { color: #111; }
+        
+        .conoceme {
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .conoceme-foto { flex: 0 0 300px; }
+        .conoceme-foto img { width: 100%; border-radius: 4px; }
+        .conoceme-texto { flex: 1; min-width: 300px; }
+        .conoceme h2 { font-size: 2em; font-weight: 300; margin-bottom: 20px; }
+        .conoceme p { color: #666; margin-bottom: 15px; }
+        
+        .servicios {
+            padding: 80px 5%;
+            background: white;
+            text-align: center;
+        }
+        .servicios h2 { font-size: 2em; font-weight: 300; margin-bottom: 40px; }
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .servicio-item { text-align: center; }
+        .servicio-icono { font-size: 2.5em; margin-bottom: 15px; }
+        .servicio-item h3 { font-size: 1em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .servicio-item p { color: #666; font-size: 0.9em; }
+        
+        .testimonios {
+            padding: 80px 5%;
+            text-align: center;
+            background: var(--color-fondo);
+        }
+        .testimonios h2 { font-size: 2em; font-weight: 300; margin-bottom: 40px; }
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .testimonio-card {
+            background: white;
+            padding: 35px;
+            border-radius: 4px;
+            border: 1px solid var(--color-borde);
+            text-align: left;
+        }
+        .testimonio-card p { font-style: italic; color: #555; }
+        .testimonio-card .autor { margin-top: 15px; font-weight: 600; }
+        
+        .agenda {
+            padding: 80px 5%;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+        .agenda h2 { font-size: 2em; font-weight: 300; margin-bottom: 20px; }
+        .agenda p { margin-bottom: 30px; opacity: 0.7; }
+        .btn-whatsapp {
+            background: var(--color-boton);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .btn-llamar {
+            background: transparent;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid white;
+        }
+        
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 40px 5%;
+            font-size: 0.85em;
+            opacity: 0.6;
+        }
+        
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; padding-top: 60px; }
+            .hero h1 { font-size: 2em; }
+            .conoceme { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <!-- REEMPLAZAR con el logo real -->
+        <img src="LOGO-CONSULTORIO.png" alt="[Nombre Consultorio]" style="height:50px;">
+    </div>
+    <a href="#agenda" class="btn-agenda-header">Agendar Cita</a>
+</header>
+
+<section class="hero">
+    <div class="hero-texto">
+        <h1>Odontología <strong>Premium</strong> en [Ciudad]</h1>
+        <p>Donde la precisión, la estética y la atención personalizada se encuentran. Bienvenido a un nuevo estándar de cuidado dental.</p>
+        <a href="#agenda" class="btn-hero">Solicitar consulta →</a>
+    </div>
+    <div class="hero-imagen">
+        <img src="FOTO-DOCTOR.jpg" alt="Dr. [Apellido]">
+    </div>
+</section>
+
+<section class="casos-clinicos">
+    <h2>Casos Clínicos</h2>
+    <div class="casos-grid">
+        <div class="caso-card">
+            <img src="ANTES-DESPUES-1.jpg" alt="Caso clínico 1">
+            <div class="caso-info"><strong>Blanqueamiento dental</strong><br>Resultado en 2 sesiones.</div>
+        </div>
+        <div class="caso-card">
+            <img src="ANTES-DESPUES-2.jpg" alt="Caso clínico 2">
+            <div class="caso-info"><strong>Carillas de porcelana</strong><br>Diseño de sonrisa personalizado.</div>
+        </div>
+        <div class="caso-card">
+            <img src="ANTES-DESPUES-3.jpg" alt="Caso clínico 3">
+            <div class="caso-info"><strong>Rehabilitación oral</strong><br>Prótesis fija sobre implantes.</div>
+        </div>
+    </div>
+</section>
+
+<section class="conoceme">
+    <div class="conoceme-foto">
+        <img src="FOTO-DOCTOR-PERFIL.jpg" alt="Dr. [Apellido]">
+    </div>
+    <div class="conoceme-texto">
+        <h2>Dr. [Nombre Apellido]</h2>
+        <p>[Biografía profesional extensa del odontólogo. Incluir universidad, especialidad, años de experiencia, membresías a asociaciones odontológicas.]</p>
+        <p>Mi enfoque se basa en la odontología mínimamente invasiva, la planificación digital y la búsqueda constante de la excelencia estética y funcional para cada paciente.</p>
+    </div>
+</section>
+
+<section class="servicios">
+    <h2>Especialidades</h2>
+    <div class="servicios-grid">
+        <div class="servicio-item"><div class="servicio-icono">🦷</div><h3>Odontología General</h3><p>Prevención y salud integral.</p></div>
+        <div class="servicio-item"><div class="servicio-icono">✨</div><h3>Estética Dental</h3><p>Blanqueamiento, carillas, diseño de sonrisa.</p></div>
+        <div class="servicio-item"><div class="servicio-icono">🔧</div><h3>Implantes</h3><p>Soluciones fijas para la pérdida dental.</p></div>
+        <div class="servicio-item"><div class="servicio-icono">📋</div><h3>Ortodoncia</h3><p>Alineadores invisibles y brackets.</p></div>
+    </div>
+</section>
+
+<section class="testimonios">
+    <h2>Nuestros Pacientes</h2>
+    <div class="testimonios-grid">
+        <div class="testimonio-card"><p>"[Testimonio extenso y detallado]"</p><p class="autor">— [Nombre Paciente]</p></div>
+        <div class="testimonio-card"><p>"[Testimonio extenso y detallado]"</p><p class="autor">— [Nombre Paciente]</p></div>
+        <div class="testimonio-card"><p>"[Testimonio extenso y detallado]"</p><p class="autor">— [Nombre Paciente]</p></div>
+    </div>
+</section>
+
+<section class="agenda" id="agenda">
+    <h2>Solicite su Consulta</h2>
+    <p>Evaluación personalizada sin costo. Respondemos en menos de 2 horas.</p>
+    <a href="https://wa.me/[NUMERO]?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20agendar%20una%20consulta" class="btn-whatsapp" target="_blank">💬 WhatsApp</a>
+    <a href="tel:+[NUMERO]" class="btn-llamar">📞 Llamar</a>
+</section>
+
+<footer>
+    <p>[Nombre Consultorio] | 📍 [Dirección] | 🕐 [Horario]</p>
+    <p>© [Año] — Todos los derechos reservados. Odontología premium en [Ciudad].</p>
+</footer>
+
+</body>
+</html>

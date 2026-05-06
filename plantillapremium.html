@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. [Apellido] | Odontólogo en [Ciudad]</title>
+    <meta name="description" content="Odontólogo general en [Ciudad]. Consulta privada con tecnología moderna. Valoración sin costo. Agenda tu cita hoy.">
+    <style>
+        :root {
+            --color-primario: #0d2137;
+            --color-acento: #c8a45c;
+            --color-boton: #25d366;
+            --color-fondo: #f4f6f9;
+            --color-texto: #4a5568;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; color: #333; line-height: 1.7; background: var(--color-fondo); }
+        
+        /* BANNER ANIMADO */
+        .banner-superior {
+            background: linear-gradient(90deg, var(--color-acento), #d4af6a, var(--color-acento));
+            color: #0d2137;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 0.9em;
+            animation: desplazar 8s infinite linear;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        @keyframes desplazar {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        header {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5em; font-weight: 700; color: var(--color-primario); }
+        .logo span { color: var(--color-acento); }
+        .btn-agenda-header {
+            background: var(--color-acento);
+            color: var(--color-primario);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero {
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            background: white;
+        }
+        .hero-texto { flex: 1; min-width: 300px; }
+        .hero-imagen { flex: 1; min-width: 300px; text-align: center; }
+        .hero h1 { font-size: 2.8em; color: var(--color-primario); margin-bottom: 20px; line-height: 1.2; font-weight: 700; }
+        .hero h1 .resaltado { color: var(--color-acento); }
+        .hero p { font-size: 1.15em; color: var(--color-texto); margin-bottom: 30px; }
+        .hero-imagen img { width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .btn-hero {
+            background: var(--color-primario);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1em;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .conoceme {
+            padding: 80px 5%;
+            background: white;
+        }
+        .conoceme-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .conoceme-foto { flex: 0 0 280px; text-align: center; }
+        .conoceme-foto img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--color-acento);
+        }
+        .conoceme-texto { flex: 1; min-width: 300px; }
+        .conoceme h2 { font-size: 2em; color: var(--color-primario); margin-bottom: 20px; }
+        .conoceme p { color: var(--color-texto); margin-bottom: 15px; font-size: 1.05em; }
+        .badges { list-style: none; margin-top: 20px; }
+        .badges li { padding: 8px 0; font-size: 0.95em; color: #444; }
+        .badges li::before { content: "◆ "; color: var(--color-acento); }
+        
+        .servicios {
+            padding: 80px 5%;
+            text-align: center;
+            background: var(--color-fondo);
+        }
+        .servicios h2 { font-size: 2em; color: var(--color-primario); margin-bottom: 40px; }
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .servicio-card {
+            background: white;
+            padding: 35px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+            border-bottom: 3px solid var(--color-acento);
+        }
+        .servicio-card:hover { transform: translateY(-8px); }
+        .servicio-icono { font-size: 2.5em; margin-bottom: 15px; }
+        .servicio-card h3 { color: var(--color-primario); margin-bottom: 10px; font-size: 1.1em; }
+        .servicio-card p { color: var(--color-texto); font-size: 0.9em; }
+        
+        .testimonios {
+            padding: 80px 5%;
+            background: white;
+            text-align: center;
+        }
+        .testimonios h2 { font-size: 2em; color: var(--color-primario); margin-bottom: 40px; }
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .testimonio-card {
+            background: var(--color-fondo);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            border-top: 3px solid var(--color-acento);
+        }
+        .testimonio-card p { color: #444; font-style: italic; }
+        .testimonio-card .autor { margin-top: 15px; font-weight: 700; color: var(--color-primario); font-style: normal; }
+        .estrellas { color: var(--color-acento); margin-bottom: 10px; }
+        
+        .agenda {
+            padding: 80px 5%;
+            background: var(--color-primario);
+            color: white;
+            text-align: center;
+        }
+        .agenda-inner { max-width: 700px; margin: 0 auto; }
+        .agenda h2 { font-size: 2em; margin-bottom: 15px; }
+        .agenda p { margin-bottom: 25px; opacity: 0.9; }
+        .btn-whatsapp {
+            background: var(--color-boton);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15em;
+            display: inline-block;
+            margin: 10px;
+        }
+        .btn-llamar {
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15em;
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid var(--color-acento);
+        }
+        
+        footer {
+            background: #0a0f14;
+            color: white;
+            text-align: center;
+            padding: 40px 5%;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; padding-top: 40px; }
+            .hero h1 { font-size: 1.8em; }
+            .conoceme-inner { flex-direction: column; text-align: center; }
+            header { padding: 10px 4%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner-superior">
+    ⭐ AGENDA TU CITA HOY — PRIMER DIAGNÓSTICO SIN COSTO ⭐ AGENDA TU CITA HOY — PRIMER DIAGNÓSTICO SIN COSTO ⭐
+</div>
+
+<header>
+    <div class="logo">Dr. <span>[Apellido]</span></div>
+    <a href="#agenda" class="btn-agenda-header">Agendar cita</a>
+</header>
+
+<section class="hero">
+    <div class="hero-texto">
+        <h1>Odontología de <span class="resaltado">excelencia</span> en [Ciudad]</h1>
+        <p>Atención personalizada, tecnología de vanguardia y un enfoque humano. Tu salud bucal merece lo mejor.</p>
+        <a href="#agenda" class="btn-hero">Solicitar valoración →</a>
+    </div>
+    <div class="hero-imagen">
+        <img src="FOTO-DOCTOR.jpg" alt="Dr. [Apellido]">
+    </div>
+</section>
+
+<!-- Las secciones conoceme, servicios, testimonios y agenda se completan igual que la plantilla BASIC -->
+<!-- [Aquí irían las mismas secciones de conóceme, servicios, testimonios y agenda pero con los estilos de esta plantilla] -->
+
+<section class="conoceme">
+    <div class="conoceme-inner">
+        <div class="conoceme-foto"><img src="FOTO-DOCTOR-PERFIL.jpg" alt="Dr. [Apellido]"></div>
+        <div class="conoceme-texto">
+            <h2>Dr. [Nombre Apellido]</h2>
+            <p>[Biografía profesional del odontólogo]</p>
+            <ul class="badges">
+                <li>[Credencial 1]</li>
+                <li>[Credencial 2]</li>
+                <li>[Credencial 3]</li>
+                <li>[Credencial 4]</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios-grid">
+        <div class="servicio-card"><div class="servicio-icono">🦷</div><h3>Odontología General</h3><p>Chequeos completos y limpiezas para toda la familia.</p></div>
+        <div class="servicio-card"><div class="servicio-icono">⚡</div><h3>Urgencias Dentales</h3><p>Atención inmediata para dolor, fracturas o traumatismos.</p></div>
+        <div class="servicio-card"><div class="servicio-icono">✨</div><h3>Estética Dental</h3><p>Blanqueamiento, carillas y diseño de sonrisa personalizado.</p></div>
+        <div class="servicio-card"><div class="servicio-icono">🔧</div><h3>Rehabilitación Oral</h3><p>Prótesis, coronas e implantes para devolverte la función.</p></div>
+    </div>
+</section>
+
+<section class="testimonios">
+    <h2>La experiencia de nuestros pacientes</h2>
+    <div class="testimonios-grid">
+        <div class="testimonio-card"><div class="estrellas">★★★★★</div><p>"[Testimonio 1]"</p><p class="autor">— [Nombre Paciente]</p></div>
+        <div class="testimonio-card"><div class="estrellas">★★★★★</div><p>"[Testimonio 2]"</p><p class="autor">— [Nombre Paciente]</p></div>
+        <div class="testimonio-card"><div class="estrellas">★★★★★</div><p>"[Testimonio 3]"</p><p class="autor">— [Nombre Paciente]</p></div>
+    </div>
+</section>
+
+<section class="agenda" id="agenda">
+    <div class="agenda-inner">
+        <h2>Agende su consulta hoy</h2>
+        <p>Primer diagnóstico sin costo. Respuesta en menos de 2 horas.</p>
+        <a href="https://wa.me/[NUMERO]?text=Hola%20Dr.%20[Apellido]%2C%20quisiera%20agendar%20una%20valoraci%C3%B3n" class="btn-whatsapp" target="_blank">💬 WhatsApp</a>
+        <a href="tel:+[NUMERO]" class="btn-llamar">📞 Llamar</a>
+    </div>
+</section>
+
+<footer>
+    <p>📍 [Dirección] | 🕐 [Horario]</p>
+    <p>© [Año] Dr. [Nombre Apellido] — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
