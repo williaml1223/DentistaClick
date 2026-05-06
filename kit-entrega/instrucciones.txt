@@ -1,0 +1,32 @@
+================================================================
+DENTISTACLICK — INSTRUCCIONES PARA TU PÁGINA WEB
+================================================================
+
+¡Felicidades! Tu página web ya está funcionando.
+
+¿CÓMO VER TU PÁGINA?
+Abre el archivo index.html en tu navegador (doble clic).
+O visita tu dominio: www.tuconsultorio.com
+
+¿QUÉ INCLUYE?
+✅ Página web completa con diseño profesional
+✅ Botón de WhatsApp directo para agendar citas
+✅ Configurada para aparecer en Google
+✅ Adaptada para verse bien en celulares
+
+¿CÓMO HACER CAMBIOS?
+1. Haz clic derecho sobre el archivo index.html
+2. Selecciona "Abrir con" → "Bloc de notas" (Windows) o "TextEdit" (Mac)
+3. Busca el texto que quieras cambiar
+4. Modifícalo
+5. Guarda el archivo
+6. Actualiza tu navegador para ver los cambios
+
+LOS TEXTOS QUE PUEDES CAMBIAR ESTÁN MARCADOS ENTRE CORCHETES [ ]
+Busca palabras como [Apellido], [Ciudad], [Teléfono] y reemplázalas.
+
+¿NECESITAS AYUDA?
+Escríbeme por WhatsApp al +58 424 8548251
+Respondo en menos de 2 horas.
+
+================================================================
